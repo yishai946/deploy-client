@@ -1,7 +1,15 @@
+// Add this at the top of the file
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
+  const getStarted = async () => {
+    const res = await fetch("http://localhost:3001");
+    console.log(res);
+  };
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -36,14 +44,10 @@ export default function Home() {
             />
             Deploy now
           </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+
+          <button className={styles.secondary} onClick={getStarted}>
+            Get started
+          </button>
         </div>
       </main>
       <footer className={styles.footer}>
