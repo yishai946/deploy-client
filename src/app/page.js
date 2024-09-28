@@ -4,6 +4,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { db } from "../../firebaseconfig";
+import { collection, addDoc } from "firebase/firestore";
 
 export default function Home() {
   const getStarted = async () => {
